@@ -56,7 +56,7 @@ export default function SliderContainer() {
 
                 <div className="col-md-5 my-4 offset-md-1 order-md-1">
                   <picture>
-                    <iframe className="border rounded-3" src="codecamp/proyect-16.html" frameborder="0" width="100%"
+                    <iframe className="border rounded-3" src="codecamp/proyect-16.html"  width="100%"
                       height="100%"></iframe>
                   </picture>
                 </div>
@@ -81,7 +81,7 @@ export default function SliderContainer() {
                 </article>
                 <div className="col-md-5 my-4 order-md-1">
                   <picture>
-                    <iframe className="border rounded-3" src="codecamp/proyect-15.html" frameborder="0" width="100%"
+                    <iframe className="border rounded-3" src="codecamp/proyect-15.html"  width="100%"
                       height="100%"></iframe>
                   </picture>
                 </div>

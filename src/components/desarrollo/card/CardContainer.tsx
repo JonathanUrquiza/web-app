@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import CardPicture from './cardPicture/CardPicture'
 
-export default function CardContainer({CardLink, CardTitle,CardImage}) {
+export default function CardContainer({CardLink, CardTitle,CardImage}: any) {
 
 return (
     <>
