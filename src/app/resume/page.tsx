@@ -18,7 +18,7 @@ export default function ResumeContainer() {
               <p className='card-subtitle'>Estudiante de Tecnicatura Superior en Análisis de sistemas. | Frontend Developer.| analista de datos en Python.</p>
             </div>
           </div>
-          <article className="card-body d-flex flex-row align-items-stretch justify-content-around gap-4 px-4 py-5 my-5">
+          <article className="card-body d-flex flex-row align-items-stretch justify-content-around flex-wrap gap-4 px-4 py-5 my-5">
             <Card className='card bg-dark text-light col-4 p-5 shadow-md'>
               <ListItem>
                 <span>Fecha de Nacimiento: </span>
