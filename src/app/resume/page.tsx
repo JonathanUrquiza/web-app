@@ -76,12 +76,12 @@ export default function ResumeContainer() {
                 Tengo un fuerte sentido del deber y soy dedicado.</p>
             </Card>
           </article>
-          <article>
-            <Card className='bg-dark col-10 offset-1'>
+          <article classNam='col-10 offset-1'>
+            <Card className='bg-dark'>
               <div className='Card-header'>
               <h3 className='text-center text-decoration-underline text-info link-underline-info'>Habilidades - Skills</h3>
               </div>
-              <div className='Cad-body flex flex-row justify-around'>
+              <div className='Cad-body flex flex-col align-center justify-around'>
                 <div>
                   <h4 className='text-center text-info'>Soft skills</h4>
                   <List className='text-light'>
