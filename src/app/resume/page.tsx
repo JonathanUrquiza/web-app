@@ -9,17 +9,17 @@ import Link from 'next/link'
 export default function ResumeContainer() {
   return (
     <>
-      <section className="row">
-        <Card className='col-10 card offset-1 my-4'>
+      <section className="row w-full">
+        <article className='col-10 card offset-1 my-4'>
           <h2 className="visually-hidden">Desarrollo de software</h2>
-          <div className='card card-header d-flex flex-row align-items-center'>
+          <Card className='card-header d-flex flex-row align-items-center'>
             <Image className='bg-dark border rounded-full' width={130} height={130} src={'/Link/de/la/imagen'} alt={'Foto de perfil'} />
             <div className='px-1'>
               <h2 className='card-title'>Jonathan Javier Urquiza</h2>
               <p className='card-subtitle'>Estudiante de Tecnicatura Superior en Análisis de sistemas. | Frontend Developer.| analista de datos en Python.</p>
             </div>
-          </div>
-          <article className="card-body d-flex flex-row align-items-stretch justify-content-around flex-wrap gap-4 px-4 py-5 my-5">
+          </Card>
+          <Card className="card-body d-flex flex-row align-items-stretch justify-content-around flex-wrap gap-4 px-4 py-5 my-5">
             <Card className='card bg-dark text-light p-5 shadow-md'>
               <ListItem>
                 <span>Fecha de Nacimiento: </span>
@@ -76,8 +76,8 @@ export default function ResumeContainer() {
                 de los porcesos de negocio de las distintas problemáticas que he enfrentado.
                 Tengo un fuerte sentido del deber y soy dedicado.</p>
             </Card>
-          </article>
-          <article className=''>
+          </Card>
+          <Card className=''>
             <Card className='bg-dark'>
               <div className='Card-header'>
               <h3 className='text-center text-decoration-underline text-info link-underline-info'>Habilidades - Skills</h3>
@@ -149,8 +149,8 @@ export default function ResumeContainer() {
                 </div>
               </div>
             </Card> 
-          </article>
-        </Card>
+          </Card>
+        </article>
       </section>
     </>
   )
