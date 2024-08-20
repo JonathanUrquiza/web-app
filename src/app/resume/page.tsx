@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Card, List, ListItem } from '@tremor/react';
+import 'bootstrap/dist/css/bootstrap.css'
 
 import Link from 'next/link'
 
@@ -9,7 +10,7 @@ export default function ResumeContainer() {
   return (
     <>
       <section className="row">
-        <Card className='card col-10 offset-1 my-4'>
+        <Card className='col-10 card offset-1 my-4'>
           <h2 className="visually-hidden">Desarrollo de software</h2>
           <div className='card card-header col-10 offset-1 d-flex flex-row align-items-center'>
             <Image className='bg-dark border rounded-full' width={130} height={130} src={'/Link/de/la/imagen'} alt={'Foto de perfil'} />
@@ -76,7 +77,7 @@ export default function ResumeContainer() {
                 Tengo un fuerte sentido del deber y soy dedicado.</p>
             </Card>
           </article>
-          <article classNam='col-10 offset-1'>
+          <article className='col-10 offset-1'>
             <Card className='bg-dark'>
               <div className='Card-header'>
               <h3 className='text-center text-decoration-underline text-info link-underline-info'>Habilidades - Skills</h3>
@@ -147,7 +148,7 @@ export default function ResumeContainer() {
                   </List>
                 </div>
               </div>
-            </Card>
+            </Card> 
           </article>
         </Card>
       </section>
