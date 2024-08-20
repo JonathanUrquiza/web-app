@@ -12,15 +12,15 @@ export default function ResumeContainer() {
       <section className="row">
         <Card className=' card offset-1 my-4'>
           <h2 className="visually-hidden">Desarrollo de software</h2>
-          <div className='card card-header col-10 offset-1 d-flex flex-row align-items-center'>
+          <div className='card card-header d-flex flex-row align-items-center'>
             <Image className='bg-dark border rounded-full' width={130} height={130} src={'/Link/de/la/imagen'} alt={'Foto de perfil'} />
-            <div className='px-4'>
+            <div className='px-1'>
               <h2 className='card-title'>Jonathan Javier Urquiza</h2>
               <p className='card-subtitle'>Estudiante de Tecnicatura Superior en Análisis de sistemas. | Frontend Developer.| analista de datos en Python.</p>
             </div>
           </div>
           <article className="card-body d-flex flex-row align-items-stretch justify-content-around flex-wrap gap-4 px-4 py-5 my-5">
-            <Card className='card bg-dark text-light col-4 p-5 shadow-md'>
+            <Card className='card bg-dark text-light p-5 shadow-md'>
               <ListItem>
                 <span>Fecha de Nacimiento: </span>
                 <span>18/09/1986</span>
@@ -62,7 +62,7 @@ export default function ResumeContainer() {
                 <span> <Link href={'https://www.youtube.com/@Sytem32'}>Youtube</Link></span>
               </ListItem>
             </Card>
-            <Card className='card bg-dark text-light col-4 p-5 shadow-md '>
+            <Card className='card bg-dark text-light p-5 shadow-md '>
               <h2 className='card-subtitle d-inline-block mb-5'>Resumen Profesional</h2>
               <p>Que ofrezco? Es una pregunta frecuente, la cual prentedo responder en esta sección, 
                 entendiendo las dificultades que enfrenta la industria, voy a 
