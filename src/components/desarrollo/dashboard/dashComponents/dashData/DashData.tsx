@@ -1,8 +1,4 @@
-'use client'
-import { Card, LineChart } from '@tremor/react';
-import DashData from '../dashData/DashData';
-
-const chartdata = [
+const DashData:object[]  = [
   {
     date: 'Mar 22',
     Java:28,
@@ -207,28 +203,6 @@ const chartdata = [
     Reactjs:80,
     Nextjs:40
   },
-];
+  ];
 
-
-const dataFormatter = (number: number) =>
-  `${Intl.NumberFormat('us').format(number).toString()}`
-
-export default function HourPerDay() {
-  return (
-    <>
-    <Card>
-                <LineChart
-                    className='h-80'
-                    index='date'
-                    data={DashData}
-                    categories={['HTML', 'Javascript','Python','Java','Reactjs','Nextjs']}
-                    colors={['orange', 'yellow','green','red', 'blue', 'violet']}
-                    valueFormatter={dataFormatter}
-                    onValueChange={(v) => console.log(v)}
-                    yAxisLabel="Horas de práctica"
-                    xAxisLabel="meses del año"
-                />
-            </Card>
-    </>
-  );
-}
+export default DashData

@@ -1,26 +1,28 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import { Card, List, ListItem } from '@tremor/react';
+import { List, ListItem } from '@tremor/react';
 import 'bootstrap/dist/css/bootstrap.css'
 
 import Link from 'next/link'
+import { Card } from 'react-bootstrap';
 
 export default function ResumeContainer() {
   return (
     <>
-      <section className="row w-full">
-        <article className='col-10 card offset-1 my-4'>
-          <h2 className="visually-hidden">Desarrollo de software</h2>
-          <Card className='card-header d-flex flex-row align-items-center'>
-            <Image className='bg-dark border rounded-full' width={130} height={130} src={'/Link/de/la/imagen'} alt={'Foto de perfil'} />
+
+      <section className='container-md p-2 my-4'>
+        <h2 className="visually-hidden">Desarrollo de software</h2>
+        <Card className='w-100'>
+          <Card.Header className='d-flex flex-col flex-md-row justify-center align-items-center'>
+            <Image className=' border rounded-full shadow-lg' width={130} height={130} src={'/'} alt={'Foto de perfil'} />
             <div className='px-1'>
-              <h2 className='card-title'>Jonathan Javier Urquiza</h2>
-              <p className='card-subtitle'>Estudiante de Tecnicatura Superior en Análisis de sistemas. | Frontend Developer.| analista de datos en Python.</p>
+              <Card.Title className='text-center text-md-start px-md-2 my-2'>Jonathan Javier Urquiza</Card.Title>
+              <Card.Subtitle className='px-md-2 my-2'>Estudiante de Tecnicatura Superior en Análisis de sistemas. | Frontend Developer.| analista de datos en Python.</Card.Subtitle>
             </div>
-          </Card>
-          <Card className="card-body d-flex flex-row align-items-stretch justify-content-around flex-wrap gap-4 px-4 py-5 my-5">
-            <Card className='card bg-dark text-light p-5 shadow-md'>
+          </Card.Header>
+          <Card.Body className="flex flex-col flex-lg-row align-center justify-evenly">
+            <Card className='col-lg-5 bg-dark text-light my-1 p-1 p-lg-3 shadow-md'>
               <ListItem>
                 <span>Fecha de Nacimiento: </span>
                 <span>18/09/1986</span>
@@ -41,8 +43,8 @@ export default function ResumeContainer() {
                 <span>Número de celular: </span>
                 <span>
                   <Link className="" href="https://wa.me/5491168370362" target="_blank">
-                  Whatsapp
-                </Link>
+                    Whatsapp
+                  </Link>
                 </span>
               </ListItem>
               <ListItem>
@@ -62,13 +64,13 @@ export default function ResumeContainer() {
                 <span> <Link href={'https://www.youtube.com/@Sytem32'}>Youtube</Link></span>
               </ListItem>
             </Card>
-            <Card className='card bg-dark text-light p-5 shadow-md '>
+            <Card className='col-lg-5 bg-dark text-light p-3 shadow-md'>
               <h2 className='card-subtitle d-inline-block mb-5'>Resumen Profesional</h2>
-              <p>Que ofrezco? Es una pregunta frecuente, la cual prentedo responder en esta sección, 
-                entendiendo las dificultades que enfrenta la industria, voy a 
+              <p>Que ofrezco? Es una pregunta frecuente, la cual prentedo responder en esta sección,
+                entendiendo las dificultades que enfrenta la industria, voy a
                 describir cual es el valor agregado que ofrezco.
                 Mis atributos mas fuertes y destacables:
-                <br/>
+                <br />
                 Siendo una persona analítica, metódica y
                 con experiencia laboral tanto como empleado y como emprendedor independiente,
                 en otros ambitos he desarrollado una fuerte capacidad para aprender rápidamente
@@ -76,13 +78,12 @@ export default function ResumeContainer() {
                 de los porcesos de negocio de las distintas problemáticas que he enfrentado.
                 Tengo un fuerte sentido del deber y soy dedicado.</p>
             </Card>
-          </Card>
-          <Card className=''>
-            <Card className='bg-dark'>
-              <div className='Card-header'>
-              <h3 className='text-center text-decoration-underline text-info link-underline-info'>Habilidades - Skills</h3>
-              </div>
-              <div className='Cad-body flex flex-col align-center justify-around'>
+          </Card.Body>
+
+          <Card.Body className='row'>
+              <h3 className='text-center text-decoration-underline link-underline-dark'>Habilidades - Skills</h3>
+            <Card className='row-8 bg-dark'>
+              <div className='flex flex-col flex-md-row align-center justify-around'>
                 <div>
                   <h4 className='text-center text-info'>Soft skills</h4>
                   <List className='text-light'>
@@ -118,7 +119,7 @@ export default function ResumeContainer() {
                 <div>
                   <h4 className='text-center text-danger'>Hard skills</h4>
                   <List className='text-light'>
-                  <ListItem>
+                    <ListItem>
                       <p>Manejo de lenguajes de programación.</p>
                     </ListItem>
                     <ListItem>
@@ -148,10 +149,11 @@ export default function ResumeContainer() {
                   </List>
                 </div>
               </div>
-            </Card> 
-          </Card>
-        </article>
+            </Card>
+          </Card.Body>
+        </Card>
       </section>
+
     </>
   )
 }
