@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 import NavbarContainer from "@/components/navbar/NavbarContainer";
 import FooterContainer from "@/components/footer/FooterContainer";
 
+
 export const metadata: Metadata = {
   title: "Devurweb",
   description: "Proyecto portfolio",

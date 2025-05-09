@@ -9,20 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.7.1",
     "@headlessui/react": "^2.1.2",
     "@headlessui/tailwindcss": "^0.2.1",
     "@remixicon/react": "^4.2.0",
     "@tremor/react": "^3.17.4",
-    "bootstrap": "^5.3.3",
+    "aos": "^3.0.0-beta.6",
+    "bootstrap": "^5.3.6",
     "next": "14.2.5",
+    "oas": "^27.0.0",
     "react": "^18",
-    "react-bootstrap": "^2.10.4",
+    "react-bootstrap": "^2.10.9",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-bootstrap": "^0.32.37",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",

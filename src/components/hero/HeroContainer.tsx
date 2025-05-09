@@ -1,17 +1,31 @@
 'use client'
+import Link from 'next/link'
 import React from 'react'
 
 
-export default function HeroContainer() {
+export default function HeroContainer({ ClassRow,
+     VisiblyHidden,
+     articleBox, 
+     titleTwo, 
+     modified, 
+     division, 
+     paragraph, 
+     danger, 
+     info, 
+     btnSuccess,
+     dataAos,
+     dataDuration
+    }: HeroDevContainerProps) {
+    
    
     return (
         <> 
-        <section className="row ">
-            <h1 className="visually-hidden">Desarrollo de software</h1>
-            <article className="hero col-12 px-4 py-5 my-5 text-center">
-                <h2 className="hero_title display-5 lead"><span className="hero_title--modified">N</span>osotros</h2>
-                <div className="hero_body col-lg-6 mx-auto">
-                    <p className="hero_text lead mb-4">Soy un desarrolador, enfocada en sitios web´s. Cuento
+        <section className={ClassRow} data-aos={dataAos} data-aos-duration={dataDuration} >
+            <h1 className={VisiblyHidden}>Desarrollo de software</h1>
+            <article className={articleBox}>
+                <h2 className={titleTwo}><span className={modified}>N</span>osotros</h2>
+                <div className={division}>
+                    <p className={paragraph}>Soy un desarrolador, enfocada en sitios web´s. Cuento
                         con múltiples herramientas para brindar a mis clientes un diseño que se adapte a sus necesidades,
                         ofreciendo un producto acorde a sus gustos. Me mantengo en capacitación continua con las herramientas y
                         los entornos que demanda el mercado.
@@ -24,7 +38,7 @@ export default function HeroContainer() {
                         <br />
                         ¡Estoy disponible para cualquier consulta que tengas!
                     </p>
-                    <a href="/form" className="btn btn-success">Contactenos</a>
+                    <Link href="/form" className={btnSuccess}>Contactenos</Link>
                 </div>
             </article>
         </section>

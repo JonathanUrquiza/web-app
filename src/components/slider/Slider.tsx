@@ -1,113 +1,160 @@
-import React from 'react'
-import Image from 'next/image'
+import React, { useEffect } from "react";
+import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
-export default function Slider() {
+
+export default function Slider({
+  ClassTitleTow,
+  ClassSection,
+  ClassSectionTwo,
+  ClassDivision,
+  ClassUnordeList,
+  ClassArticleTwoOnList,
+  ClassGlideSection,
+  ClassGlideTitle,
+  ClassPictureDiv,
+  ClassImg,
+  ClassDivFlex,
+  ClassButton,
+  ClassGlideTextInfo,
+  ClassGlideList,
+  ClassGlideArticleTwo,
+  danger
+}: SliderInterface) {
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
+  const sublisted: ListedInterface[] = [
+    { id: 1, name: "-SpiraPlan." },
+    { id: 2, name: "-Jmetter." },
+    { id: 3, name: "-Jira." },
+  ];
+
+  const itemsSlider = [
+    {
+      id: 1, 
+      title: ".Frontend Dev",
+      subtitle: "AppWeb", 
+      imageSrc: "",
+      imageAlt: "Imagen represntativa del codigo de desarrollo de un frontend.",
+      buttonText: "More information",
+      listItems: {
+        listed: [
+          { id: 1, name: "API´S" },
+          { id: 2, name: "Fetching" },
+          { id: 3, name: "Frameworks." },
+          { id: 4, name: "Movile First." },
+          { id: 5, name: "Consulta a base de datos (SQL)." },
+          { id: 6, name: "Gestor de verciones." },
+          { id: 7, name: "S.E.O." },
+        ],
+      }
+    },{
+      id: 2, 
+      title: "Backend Dev",
+      subtitle: "AppWeb", 
+      imageSrc: "",
+      imageAlt: "Imagen represntativa del codigo de desarrollo de un backend.",
+      buttonText: "More information",
+      listItems: {
+        listed: [
+          { id: 1, name: "Entorno de trabajo nodejs." },
+          { id: 2, name: "Ciclos e iteraciones." },
+          { id: 3, name: "Componentes." },
+          { id: 4, name: "Arquitectura (MVC, Microservicios)." },
+          { id: 5, name: "Middleware." },
+          { id: 6, name: "Asincronias y promesas." },
+          { id: 7, name: "Web Module." },
+          { id: 8, name: "Eventos." },
+        ],
+      }
+    },{
+      id: 3,
+      title: "Testing Funcional",
+      subtitle: "BlackBox",
+      imageSrc: "",
+      imageAlt:"Imagen represntativa del codigo de desarrollo de un backend.",
+      buttonText:"More information",
+      listItems:{
+        listed:[
+          {id:1,name:"Herramientas.",sublisted},
+          {id:2,name:"Agile."},
+          {id:3,name:"Use case Doc."},
+          {id:4,name:"test case Doc."},
+          {id:5,name:"DER Desing and doc."}
+        ]
+      }
+    }
+  ];
+  let bullets = itemsSlider.length;
+
   return (
     <>
-        <h2 className="display-5 lead efect">Our services</h2>
-    <section className="aos-init" data-aos="fade-left" data-aos-offset="400" data-aos-delay="100" data-aos-duration="400">
-      <section className="glide">
-        <div className="glide__track" data-glide-el="track">
+      <h2 className={ClassTitleTow}>Our services</h2>
+      <section
+        className={ClassSection}
+        data-aos="fade-left"
+        data-aos-offset="400"
+        data-aos-delay="100"
+        data-aos-duration="400"
+      >
+        <section className={ClassSectionTwo}>
+          <div className={ClassDivision} data-glide-el="track">
+            <ul className={ClassUnordeList}>
 
-          <ul className="w-100 glide__slides mb-5">
-            <li className="glide__slide">
-              <section className="row">
-                <article className="col-md-7 text-center my-4">
-                  <h2 className="featurette-heading fw-normal lh-1">.Frontend Dev <span className="text-danger">AppWeb;</span>
-                  </h2>
-                  <ul className="lead list-unstyled">
-                    <li>API´s</li>
-                    <li>Fetching</li>
-                    <li>Frameworks.</li>
-                    <li>Movile First.</li>
-                    <li>Consulta a base de datos (SQL).</li>
-                    <li>Gestor de verciones.</li>
-                    <li>S.E.O.</li>
-                  </ul>
-                </article>
+              {itemsSlider.map((item) => (
+                <li key={item.id}>
+                  <section className={ClassGlideSection}>
+                    <article className={item.id % 2 === 0 ? ClassArticleTwoOnList : ClassGlideArticleTwo}>
+                      <h2 className={ClassGlideTitle}>
+                        {item.title}{" "}
+                        <span className={item.id % 2 !== 0 ? danger : ClassGlideTextInfo}>
+                          {item.subtitle}
+                        </span>
+                      </h2>
+                      <ul className={ClassGlideList}>
+                        {item.listItems.listed?.map((listItem) => (
+                          <>
+                            <li key={listItem.id}>{listItem.name}</li>
+                            {(listItem.sublisted ?? []).length > 0 && (
+                              <ul className={ClassGlideSection}>
+                                {(listItem.sublisted ?? []).map((sublist) => (
+                                  <li key={sublist.id}>{sublist.name}</li>
+                                ))}
+                              </ul>
+                            )}
+                          </>
+                        ))}
+                      </ul>
+                    </article>
 
-                <div className="col-md-5 order-md-1">
-                  
-                  <picture>
-                    <Image className="img-fluid mx-auto border rounded border-grey-light" src=""
-                      alt=""/>
-                  </picture>
-                  <div className="d-flex justify-content-around">
-                    <button className="btn btn-info border rounded-2 my-3 col-7" type="submit">More information</button>
-                  </div>
-                </div>
-              </section>
-            </li>
-            <li className="glide__slide">
-              <section className="row text-center">
-                <article className="col-md-7 order-md-2">
+                    <div className={ClassPictureDiv}>
+                      <picture>
+                        <Image
+                          className={ClassImg}
+                          src={item.imageSrc}
+                          width={500}
+                          height={500}
+                          alt={item.imageAlt}
+                        />
+                      </picture>
+                      <div className={ClassDivFlex}>
+                        <button className={ClassButton} type="submit">
+                          {item.buttonText}
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                </li>
+              ))}
 
-                  <h2 className="featurette-heading fw-normal lh-1">Backend Dev<span className="text-info">
-                      AppWeb</span></h2>
-                  <ul className="lead list-unstyled">
-                    <li>Entorno de trabajo nodejs.</li>
-                    <li>Ciclos e iteraciones.</li>
-                    <li>Componentes.</li>
-                    <li>Arquitecturas (MVC).</li>
-                    <li>Middleware.</li>
-                    <li>Asincronias y promesas.</li>
-                    <li>Web Module.</li>
-                    <li>Eventos.</li>
-                    <li>Ajax y Fetch.</li>
-                    <li>API´s</li>
-                  </ul>
-
-                </article>
-
-                <div className="col-md-5 order-md-1">
-                    <picture>
-                    <Image className="img-fluid mx-auto border rounded border-grey-light" src="img/fondos/servicios.png"
-                      alt="Imagen represntativa del codigo de desarrollo de un backend."/>
-                  </picture>
-                  <div className="d-flex justify-content-around">
-                    <button className="btn btn-info border rounded-2 my-3 col-7" type="submit">More information</button>
-                  </div>
-                </div>
-              </section>
-            </li>
-            <li className="glide__slide">
-              <section className="row">
-                <article className="col-md-7 text-center my-4">
-                  <h2 className="featurette-heading fw-normal lh-1">Testing Funcional <span
-                      className="text-secondary border-1 border-secondary">BlackBox</span></h2>
-                  <ul className="lead list-unstyled">
-                    <li>Herramientas:
-                      <ul>-SpitaPlan</ul>
-                      <ul>-Jmeter</ul>
-                      <ul>-Jira</ul>
-                    </li>
-                    <li>Metodologías agile.</li>
-                    <li>Agile testing.</li>
-                    <li>Test set.</li>
-                    <li>User case.</li>
-                    <li>Test case.</li>
-                  </ul>
-                </article>
-                <div className="col-md-5 order-md-1">
-                  <picture>
-                    <Image className="img-fluid mx-auto border rounded border-grey-light" src="img/fondos/web-personal.jpg"
-                      alt="Imagen represntativa del codigo de desarrollo de un backend."/>
-                  </picture>
-                  <div className="d-flex justify-content-around">
-                    <button className="btn btn-info border rounded-2 my-3 col-7" type="submit">More information</button>
-                  </div>
-                </div>
-              </section>
-            </li>
-          </ul>
-        </div>
-        <div className="glide__bullets" data-glide-el="controls[nav]">
-          <button className="glide__bullet" data-glide-dir="=0"></button>
-          <button className="glide__bullet" data-glide-dir="=1"></button>
-          <button className="glide__bullet" data-glide-dir="=2"></button>
-        </div>
+            </ul>
+          </div>
+          
+        </section>
       </section>
-    </section>
     </>
-  )
+  );
 }
