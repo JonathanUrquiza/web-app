@@ -7,29 +7,71 @@ const inter = Inter({ subsets: ["latin"] });
 import NavbarContainer from "@/components/navbar/NavbarContainer";
 import FooterContainer from "@/components/footer/FooterContainer";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
 export const metadata: Metadata = {
-  title: "Devurweb",
-  description: "Proyecto portfolio",
-  keywords:['Next.js', 'React', 'Javascript'],
-  authors : [
-    {name: 'Jonathan Javier Urquiza'}
-  ],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "DevUrWeb | Jonathan Urquiza — Desarrollador Frontend",
+    template: "%s | DevUrWeb"
+  },
+  description: "Portfolio de Jonathan Javier Urquiza, desarrollador web frontend en Buenos Aires, Argentina. Servicios de desarrollo web con Next.js, React y más.",
+  keywords: ['Next.js', 'React', 'JavaScript', 'TypeScript', 'desarrollador web', 'frontend', 'Buenos Aires', 'Argentina', 'portfolio', 'DevUrWeb'],
+  authors: [{ name: 'Jonathan Javier Urquiza', url: 'https://www.linkedin.com/in/jonathan-urquiza-179a70119/' }],
   publisher: 'Jonathan Javier Urquiza',
-  creator: 'Jonathan Javier Urquiza'
+  creator: 'Jonathan Javier Urquiza',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true }
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_AR',
+    url: siteUrl,
+    siteName: 'DevUrWeb',
+    title: 'DevUrWeb | Jonathan Urquiza — Desarrollador Frontend',
+    description: 'Portfolio de Jonathan Javier Urquiza, desarrollador web frontend en Buenos Aires, Argentina.',
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630, alt: 'DevUrWeb — Portfolio de Jonathan Urquiza' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevUrWeb | Jonathan Urquiza — Desarrollador Frontend',
+    description: 'Portfolio de Jonathan Javier Urquiza, desarrollador web frontend en Buenos Aires, Argentina.',
+    images: ['/opengraph-image.png']
+  }
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DevUrWeb",
+  "url": siteUrl,
+  "description": "Portfolio de Jonathan Javier Urquiza, desarrollador web frontend en Buenos Aires, Argentina.",
+  "inLanguage": "es-AR",
+  "author": {
+    "@type": "Person",
+    "name": "Jonathan Javier Urquiza",
+    "url": `${siteUrl}/resume`
+  }
+};
+
 export default function RootLayout({
-children,
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={inter.className}>
-        <NavbarContainer/>
+        <NavbarContainer />
         {children}
-        <FooterContainer/>
-        </body>
+        <FooterContainer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </body>
     </html>
   );
 }

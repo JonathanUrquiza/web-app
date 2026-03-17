@@ -23,10 +23,10 @@ export default function FooterContainer() {
                   className="bg-light border-5 rounded-2" width={50} height={50} src={linkedin} alt="linkedin" /></Link>
               </li>
               <li className="list-item mx-4 my-2"><Link className="link-secondary" href="https://github.com/JonathanUrquiza"
-                target="_blank"><Image className="bg-light border-5 rounded-5" width={50} height={50} src={gitHub} alt=""
+                target="_blank"><Image className="bg-light border-5 rounded-5" width={50} height={50} src={gitHub} alt="Perfil de GitHub de Jonathan Urquiza"
                 /></Link></li>
               <li className="list-item mx-4 my-2"><Link className="link-secondary" href="https://wa.me/5491168370362"
-                target="_blank"><Image className="bg-light border-1 rounded-5" width={50} height={50} src={whatsapp} alt=""
+                target="_blank"><Image className="bg-light border-1 rounded-5" width={50} height={50} src={whatsapp} alt="Contactar por WhatsApp"
                 /></Link></li>
             </ul>
           </div>
@@ -36,7 +36,7 @@ export default function FooterContainer() {
         <div className="row">
           <div className="col-12 d-flex flex-column justify-content-around align-items-center ">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="d-block mb-2" role="img"
+              strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="d-block mb-2" role="img"
               viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" />
               <path
