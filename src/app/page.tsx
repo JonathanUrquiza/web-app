@@ -6,18 +6,18 @@ import "bootstrap/dist/css/bootstrap.css";
 export default function Home() {
   const classMain =
       "container-fluid d-flex flex-column justify-content-center align-items-center",
-    btnSuccess = "btn btn-success",
+    btnSuccess = "btn btn-info text-dark fw-bold",
     ClassRow = "row aos-init",
     VisiblyHidden = "visually-hidden",
     articleBox = "hero col-12 px-4 py-5 my-5 text-center",
-    titleTwo = "hero_title display-5 lead",
+    titleTwo = "hero_title display-6 lead",
     modified = "hero_title--modified",
     division = "hero_body col-lg-6 mx-auto",
     paragraph = "hero_text lead mb-4",
     danger = "text-danger",
     info = "text-info",
     dataAos = "zoom-in",
-    dataDuratioin = "1000";
+    dataDuration = "1000";
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function Home() {
           info={info}
           btnSuccess={btnSuccess}
           dataAos={dataAos}
-          dataDuration={dataDuratioin}
+          dataDuration={dataDuration}
         />
         <HeroSliderServices />
       </main>

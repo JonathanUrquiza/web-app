@@ -70,7 +70,7 @@ export default function BackendDev() {
       {/* Hero */}
       <section className="text-center mb-5">
         <span className="badge bg-warning text-dark mb-3">Backend Development</span>
-        <h1 className="display-5 fw-bold text-white mb-3">
+        <h1 className="display-4 fw-bold text-white mb-3">
           APIs <span className="text-warning">robustas</span> y escalables
         </h1>
         <p className="lead text-secondary col-lg-7 mx-auto">
@@ -93,7 +93,7 @@ export default function BackendDev() {
                 <span className={`badge ${plan.badgeClass} mb-3 align-self-start`}>
                   {plan.badge}
                 </span>
-                <h2 className="card-title h5 fw-bold text-warning mb-1">{plan.name}</h2>
+                <h2 className="card-title display-6 fw-bold text-warning mb-1">{plan.name}</h2>
                 <p className="fw-bold text-white mb-3" style={{ fontSize: '1.1rem' }}>
                   {plan.priceRange}
                 </p>
@@ -121,7 +121,7 @@ export default function BackendDev() {
 
       {/* Tech stack */}
       <section className="text-center mb-5">
-        <h3 className="h6 text-secondary text-uppercase mb-3">Tecnologías</h3>
+        <h3 className="lead fw-semibold text-secondary text-uppercase mb-3">Tecnologías</h3>
         <div className="d-flex flex-wrap justify-content-center gap-2">
           {['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Prisma', 'JWT', 'MercadoPago'].map(
             (tech) => (

@@ -5,7 +5,8 @@ import React from 'react'
 export default function page() {
   return (
     <>
-  <Dashboard/>
+    <h1 className="visually-hidden">Dashboard de Habilidades — Jonathan Javier Urquiza</h1>
+    <Dashboard/>
     </>
   )
 }

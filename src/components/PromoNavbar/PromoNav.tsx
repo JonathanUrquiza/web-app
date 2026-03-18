@@ -6,25 +6,22 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 export default function PromoNav() {
     return (
         <Navbar expand="lg" className="navbar navbar-expand-lg navbar-dark bg-black">
-            <Container>
-                <Navbar.Brand href="/promociones">
-                    <span className='text-info'>Pro</span><span className="text-warning">mo</span><span className='text-info'>ciones</span>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className='me-auto'>
+            <Container className="justify-content-center">
+                <Navbar.Toggle aria-controls="promo-navbar-nav" />
+                <Navbar.Collapse id="promo-navbar-nav" className="justify-content-center">
+                    <Nav>
                         <Nav.Link>
-                            <Link className='text-decoration-none text-light' href='/promociones/web'>
+                            <Link className='text-decoration-none text-light promo-nav-link' href='/promociones/web'>
                                 Desarrollo web
                             </Link>
                         </Nav.Link>
                         <Nav.Link>
-                            <Link className='text-decoration-none text-light' href='/promociones/front'>
+                            <Link className='text-decoration-none text-light promo-nav-link' href='/promociones/front'>
                                 Frontend Development
                             </Link>
                         </Nav.Link>
                         <Nav.Link>
-                            <Link className='text-decoration-none text-light' href='/promociones/back'>
+                            <Link className='text-decoration-none text-light promo-nav-link' href='/promociones/back'>
                                 Backend Development
                             </Link>
                         </Nav.Link>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
@@ -25,6 +25,30 @@ export default function Slider({
   useEffect(() => {
     AOS.init({});
   }, []);
+
+  const [displayText, setDisplayText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const fullText = 'Our services'
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>
+
+    if (!isDeleting && displayText === fullText) {
+      // pause before deleting
+      timeout = setTimeout(() => setIsDeleting(true), 1500)
+    } else if (isDeleting && displayText === '') {
+      // pause before typing again
+      timeout = setTimeout(() => setIsDeleting(false), 500)
+    } else if (!isDeleting) {
+      // typing
+      timeout = setTimeout(() => setDisplayText(fullText.slice(0, displayText.length + 1)), 100)
+    } else {
+      // deleting
+      timeout = setTimeout(() => setDisplayText(fullText.slice(0, displayText.length - 1)), 60)
+    }
+
+    return () => clearTimeout(timeout)
+  }, [displayText, isDeleting])
 
   const sublisted: ListedInterface[] = [
     { id: 1, name: "-SpiraPlan." },
@@ -92,20 +116,24 @@ export default function Slider({
 
   return (
     <>
-      <h2 className={ClassTitleTow}>Our services</h2>
-      <section
-        className={ClassSection}
-        data-aos="fade-left"
-        data-aos-offset="400"
-        data-aos-delay="100"
-        data-aos-duration="400"
-      >
+      <style>{`@keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }`}</style>
+      <h2 className={ClassTitleTow}>
+        {displayText}
+        <span style={{ borderRight: '2px solid currentColor', marginLeft: '2px', animation: 'blink 0.7s step-end infinite' }}>&nbsp;</span>
+      </h2>
+      <section className={ClassSection}>
         <section className={ClassSectionTwo}>
           <div className={ClassDivision} data-glide-el="track">
             <ul className={ClassUnordeList}>
 
               {itemsSlider.map((item) => (
-                <li key={item.id}>
+                <li
+                  key={item.id}
+                  data-aos={item.id === 1 ? 'fade-right' : item.id === 2 ? 'fade-up' : 'fade-left'}
+                  data-aos-offset="200"
+                  data-aos-delay={item.id === 1 ? '0' : item.id === 2 ? '200' : '400'}
+                  data-aos-duration="600"
+                >
                   <section className={ClassGlideSection}>
                     <article className={item.id % 2 === 0 ? ClassArticleTwoOnList : ClassGlideArticleTwo}>
                       <h2 className={ClassGlideTitle}>

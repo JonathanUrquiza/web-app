@@ -10,7 +10,7 @@ export default function ResumeClient() {
   return (
     <>
       <section className='container-md p-2 my-4'>
-        <h2 className="visually-hidden">Desarrollo de software</h2>
+        <h1 className="visually-hidden">Currículum — Jonathan Javier Urquiza</h1>
         <Card className='w-100'>
           <Card.Header className='d-flex flex-col flex-md-row justify-center align-items-center'>
             <Image className=' border rounded-full shadow-lg' width={130} height={130} src={'/'} alt={'Foto de perfil'} />
@@ -63,7 +63,7 @@ export default function ResumeClient() {
               </ListItem>
             </Card>
             <Card className='col-lg-5 bg-dark text-light p-3 shadow-md'>
-              <h2 className='card-subtitle d-inline-block mb-5'>Resumen Profesional</h2>
+              <h2 className='card-subtitle display-6 d-inline-block mb-5'>Resumen Profesional</h2>
               <p>Que ofrezco? Es una pregunta frecuente, la cual prentedo responder en esta sección,
                 entendiendo las dificultades que enfrenta la industria, voy a
                 describir cual es el valor agregado que ofrezco.
@@ -79,7 +79,7 @@ export default function ResumeClient() {
           </Card.Body>
 
           <Card.Body className='row'>
-              <h3 className='text-center text-decoration-underline link-underline-dark'>Habilidades - Skills</h3>
+              <h3 className='lead fw-semibold text-center text-decoration-underline'>Habilidades - Skills</h3>
             <Card className='row-8 bg-dark'>
               <div className='flex flex-col flex-md-row align-center justify-around'>
                 <div>

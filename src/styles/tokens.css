@@ -1,0 +1,277 @@
+/* =============================================================
+   DevUrWeb Design Tokens
+   Source of truth for all brand colors, spacing, and radii.
+   Imported by globals.css BEFORE @tailwind directives.
+   ============================================================= */
+
+/* ── Shared / invariant tokens ──────────────────────────────── */
+:root {
+  /* Border radius (layout tokens — theme-independent) */
+  --bs-border-radius:     0.5rem;
+  --bs-border-radius-sm:  0.375rem;
+  --bs-border-radius-lg:  0.75rem;
+
+  /* --- Tremor light-mode base (used when data-theme="light") --- */
+  --tremor-brand-faint:        #eff6ff;
+  --tremor-brand-muted:        #bfdbfe;
+  --tremor-brand-subtle:       #60a5fa;
+  --tremor-brand-default:      #3b82f6;
+  --tremor-brand-emphasis:     #1d4ed8;
+  --tremor-brand-inverted:     #ffffff;
+  --tremor-background-muted:   #f9fafb;
+  --tremor-background-subtle:  #f3f4f6;
+  --tremor-background-default: #ffffff;
+  --tremor-background-emphasis:#374151;
+  --tremor-border-default:     #e5e7eb;
+  --tremor-content-subtle:     #9ca3af;
+  --tremor-content-default:    #6b7280;
+  --tremor-content-emphasis:   #374151;
+  --tremor-content-strong:     #111827;
+  --tremor-content-inverted:   #ffffff;
+}
+
+/* ── Dark theme (default — also :root fallback for no-JS) ──── */
+:root,
+[data-theme="dark"] {
+  /* Brand palette */
+  --duw-bg:      #000000;
+  --duw-surface: #1a1a1a;
+  --duw-border:  #2d2d2d;
+  --duw-text:    #f8f9fa;
+  --duw-muted:   #6c757d;
+  --duw-accent:  #0dcaf0;   /* cyan */
+  --duw-cyan:    #0dcaf0;
+  --duw-amber:   #ffc107;
+  --duw-danger:  #dc3545;
+
+  /* Bootstrap overrides */
+  --bs-body-bg:           #000000;
+  --bs-body-color:        #f8f9fa;
+  --bs-info:              #0dcaf0;
+  --bs-info-rgb:          13, 202, 240;
+  --bs-warning:           #ffc107;
+  --bs-warning-rgb:       255, 193, 7;
+  --bs-dark:              #111111;
+  --bs-dark-rgb:          17, 17, 17;
+  --bs-secondary-color:   #6c757d;
+
+  /* Card */
+  --bs-card-bg:           #1a1a1a;
+  --bs-card-border-color: #2d2d2d;
+  --bs-card-color:        #f8f9fa;
+  --bs-card-cap-bg:       rgba(255, 255, 255, 0.05);
+
+  /* Navbar */
+  --bs-navbar-color:       #f8f9fa;
+  --bs-navbar-hover-color: #0dcaf0;
+  --bs-navbar-active-color:#0dcaf0;
+}
+
+/* ── Tremor dark block — active under dark and synthwave themes ── */
+[data-theme="dark"] .dark,
+[data-theme="synthwave"] .dark {
+  --tremor-brand-faint:        #0B1229;
+  --tremor-brand-muted:        #172554;
+  --tremor-brand-subtle:       #1e40af;
+  --tremor-brand-default:      #0dcaf0;   /* site cyan */
+  --tremor-brand-emphasis:     #38bdf8;
+  --tremor-brand-inverted:     #172554;
+  --tremor-background-muted:   #131A2B;
+  --tremor-background-subtle:  #1a1a1a;
+  --tremor-background-default: #000000;
+  --tremor-background-emphasis:#d1d5db;
+  --tremor-border-default:     #2d2d2d;
+  --tremor-content-subtle:     #4b5563;
+  --tremor-content-default:    #6b7280;
+  --tremor-content-emphasis:   #e5e7eb;
+  --tremor-content-strong:     #f9fafb;
+  --tremor-content-inverted:   #030712;
+}
+
+/* ── Synthwave Tremor — neon chart colors ────────────────────── */
+[data-theme="synthwave"] .dark {
+  --tremor-brand-default:      #ff006e;   /* hot pink */
+  --tremor-brand-emphasis:     #00f5ff;   /* electric cyan */
+  --tremor-brand-subtle:       #8338ec;   /* purple */
+  --tremor-background-default: #0a0014;
+  --tremor-background-subtle:  #1a0533;
+  --tremor-background-muted:   #130025;
+  --tremor-border-default:     rgba(131, 56, 236, 0.40);
+  --tremor-content-default:    #b39ddb;
+  --tremor-content-emphasis:   #f0e6ff;
+  --tremor-content-strong:     #ffffff;
+}
+
+/* ── Light theme ─────────────────────────────────────────────── */
+[data-theme="light"] {
+  /* Brand palette */
+  --duw-bg:      #ffffff;
+  --duw-surface: #f8f9fa;
+  --duw-border:  #dee2e6;
+  --duw-text:    #212529;
+  --duw-muted:   #6c757d;
+  --duw-accent:  #0891b2;
+  --duw-cyan:    #0891b2;
+  --duw-amber:   #d97706;
+  --duw-danger:  #dc3545;
+
+  /* Bootstrap overrides */
+  --bs-body-bg:           #f8f9fa;
+  --bs-body-color:        #212529;
+  --bs-info:              #0891b2;
+  --bs-info-rgb:          8, 145, 178;
+  --bs-warning:           #d97706;
+  --bs-warning-rgb:       217, 119, 6;
+  --bs-dark:              #212529;
+  --bs-dark-rgb:          33, 37, 41;
+  --bs-secondary-color:   #6c757d;
+
+  /* Card */
+  --bs-card-bg:           #ffffff;
+  --bs-card-border-color: #dee2e6;
+  --bs-card-color:        #212529;
+  --bs-card-cap-bg:       rgba(0, 0, 0, 0.03);
+
+  /* Navbar — stays dark in light theme per OQ-2 decision */
+  --bs-navbar-color:       #f8f9fa;
+  --bs-navbar-hover-color: #0891b2;
+  --bs-navbar-active-color:#0891b2;
+
+  /* Tremor light overrides */
+  --tremor-brand-faint:        #eff6ff;
+  --tremor-brand-muted:        #bfdbfe;
+  --tremor-brand-subtle:       #60a5fa;
+  --tremor-brand-default:      #0891b2;
+  --tremor-brand-emphasis:     #0e7490;
+  --tremor-brand-inverted:     #ffffff;
+  --tremor-background-muted:   #f9fafb;
+  --tremor-background-subtle:  #f3f4f6;
+  --tremor-background-default: #ffffff;
+  --tremor-background-emphasis:#374151;
+  --tremor-border-default:     #e5e7eb;
+  --tremor-content-subtle:     #9ca3af;
+  --tremor-content-default:    #6b7280;
+  --tremor-content-emphasis:   #374151;
+  --tremor-content-strong:     #111827;
+  --tremor-content-inverted:   #ffffff;
+}
+
+/* Keep navbar background dark in light theme (OQ-2: brand consistency) */
+[data-theme="light"] .bg-black {
+  background-color: #212529 !important;
+}
+
+/* ── Synthwave theme ─────────────────────────────────────────── */
+[data-theme="synthwave"] {
+  /* Brand palette */
+  --duw-bg:      #0a0014;
+  --duw-surface: #1a0533;
+  --duw-border:  rgba(131, 56, 236, 0.40);
+  --duw-text:    #f0e6ff;
+  --duw-muted:   #b39ddb;
+  --duw-accent:  #ff006e;   /* hot pink */
+  --duw-cyan:    #00f5ff;   /* electric cyan */
+  --duw-purple:  #8338ec;
+  --duw-amber:   #ffc107;
+  --duw-danger:  #ff006e;
+
+  /* Bootstrap overrides */
+  --bs-body-bg:           #0a0014;
+  --bs-body-color:        #f0e6ff;
+  --bs-info:              #00f5ff;
+  --bs-info-rgb:          0, 245, 255;
+  --bs-warning:           #ff006e;
+  --bs-warning-rgb:       255, 0, 110;
+  --bs-success:           #8338ec;
+  --bs-dark:              #1a0533;
+  --bs-dark-rgb:          26, 5, 51;
+  --bs-secondary-color:   #b39ddb;
+
+  /* Card */
+  --bs-card-bg:           #1a0533;
+  --bs-card-border-color: rgba(131, 56, 236, 0.40);
+  --bs-card-color:        #f0e6ff;
+  --bs-card-cap-bg:       rgba(255, 255, 255, 0.05);
+
+  /* Navbar */
+  --bs-navbar-color:       #f0e6ff;
+  --bs-navbar-hover-color: #00f5ff;
+  --bs-navbar-active-color:#ff006e;
+
+  /* Neon glow utilities */
+  --duw-glow-pink: 0 0 8px #ff006e, 0 0 20px rgba(255, 0, 110, 0.40);
+  --duw-glow-cyan: 0 0 8px #00f5ff, 0 0 20px rgba(0, 245, 255, 0.40);
+
+  /* Body gradient */
+  --duw-bg-gradient: linear-gradient(180deg, #0a0014 0%, #1a0533 100%);
+}
+
+/* Synthwave body gradient background */
+[data-theme="synthwave"] body {
+  background: var(--duw-bg-gradient) !important;
+  min-height: 100vh;
+  color: #f0e6ff !important;
+}
+
+/* Synthwave — force white/lavender text on all elements */
+[data-theme="synthwave"] p,
+[data-theme="synthwave"] li,
+[data-theme="synthwave"] span:not(.badge),
+[data-theme="synthwave"] a,
+[data-theme="synthwave"] label,
+[data-theme="synthwave"] small,
+[data-theme="synthwave"] .lead,
+[data-theme="synthwave"] .text-light,
+[data-theme="synthwave"] .text-white,
+[data-theme="synthwave"] .text-white-50,
+[data-theme="synthwave"] .text-muted,
+[data-theme="synthwave"] .text-secondary,
+[data-theme="synthwave"] .card-text,
+[data-theme="synthwave"] .list-unstyled li {
+  color: #f0e6ff !important;
+}
+
+/* Synthwave — neon glow on headings */
+[data-theme="synthwave"] h1,
+[data-theme="synthwave"] h2,
+[data-theme="synthwave"] h3 {
+  color: #f0e6ff !important;
+  text-shadow: 0 0 8px #00f5ff, 0 0 20px rgba(0, 245, 255, 0.4);
+}
+
+/* Synthwave text glow utilities */
+[data-theme="synthwave"] .text-info {
+  color: #00f5ff !important;
+  text-shadow: var(--duw-glow-cyan);
+}
+[data-theme="synthwave"] .text-warning {
+  color: #ff006e !important;
+  text-shadow: var(--duw-glow-pink);
+}
+[data-theme="synthwave"] .text-success {
+  color: #8338ec !important;
+  text-shadow: 0 0 8px #8338ec, 0 0 20px rgba(131, 56, 236, 0.4);
+}
+[data-theme="synthwave"] .text-danger {
+  color: #ff006e !important;
+  text-shadow: var(--duw-glow-pink);
+}
+
+/* Synthwave — PromoNavbar neon links */
+[data-theme="synthwave"] .promo-nav-link {
+  color: #f0e6ff !important;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+[data-theme="synthwave"] .promo-nav-link:hover {
+  color: #00f5ff !important;
+  text-shadow: 0 0 8px #00f5ff, 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
+/* =============================================================
+   Social icon sizing utility (used in FooterContainer)
+   ============================================================= */
+.icon-social {
+  width:  32px;
+  height: 32px;
+  object-fit: contain;
+}

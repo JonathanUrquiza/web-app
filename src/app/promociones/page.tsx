@@ -56,7 +56,7 @@ export default function PromocionesContainer() {
     <main className="container-fluid bg-black min-vh-100 py-5 px-3 px-md-5">
       {/* Hero */}
       <section className="text-center mb-5">
-        <h1 className="display-5 fw-bold text-white mb-3">
+        <h1 className="display-4 fw-bold text-white mb-3">
           Servicios de <span className="text-info">Desarrollo</span>{' '}
           <span className="text-warning">Web</span>
         </h1>
@@ -81,7 +81,7 @@ export default function PromocionesContainer() {
                 <span className={`badge ${cat.badgeClass} mb-3 align-self-start`}>
                   Desde {cat.priceFrom} ARS
                 </span>
-                <h2 className={`card-title h4 fw-bold ${cat.color}`}>{cat.title}</h2>
+                <h2 className={`card-title display-6 fw-bold ${cat.color}`}>{cat.title}</h2>
                 <p className="text-secondary small mb-3">{cat.subtitle}</p>
                 <p className="card-text text-white-50 flex-grow-1">{cat.description}</p>
                 <ul className="list-unstyled mt-3 mb-4">

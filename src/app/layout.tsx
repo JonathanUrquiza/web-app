@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import NavbarContainer from "@/components/navbar/NavbarContainer";
 import FooterContainer from "@/components/footer/FooterContainer";
+import ThemeSwitcher from "@/components/ui/ThemeSwitcher/ThemeSwitcher";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
@@ -63,10 +64,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        {/* No-flash theme script: runs synchronously before first paint */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var V=["dark","light","synthwave"];var s=localStorage.getItem("duw-theme");document.documentElement.setAttribute("data-theme",V.indexOf(s)!==-1?s:"dark");})();`
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <NavbarContainer />
         {children}
         <FooterContainer />
+        <ThemeSwitcher />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}

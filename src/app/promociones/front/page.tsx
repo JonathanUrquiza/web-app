@@ -69,7 +69,7 @@ export default function FrontendDev() {
       {/* Hero */}
       <section className="text-center mb-5">
         <span className="badge bg-info text-dark mb-3">Frontend Development</span>
-        <h1 className="display-5 fw-bold text-white mb-3">
+        <h1 className="display-4 fw-bold text-white mb-3">
           Interfaces <span className="text-info">modernas</span> y responsivas
         </h1>
         <p className="lead text-secondary col-lg-7 mx-auto">
@@ -92,7 +92,7 @@ export default function FrontendDev() {
                 <span className={`badge ${plan.badgeClass} mb-3 align-self-start`}>
                   {plan.badge}
                 </span>
-                <h2 className="card-title h5 fw-bold text-info mb-1">{plan.name}</h2>
+                <h2 className="card-title display-6 fw-bold text-info mb-1">{plan.name}</h2>
                 <p className="fw-bold text-white mb-3" style={{ fontSize: '1.1rem' }}>
                   {plan.priceRange}
                 </p>
@@ -120,7 +120,7 @@ export default function FrontendDev() {
 
       {/* Tech stack */}
       <section className="text-center mb-5">
-        <h3 className="h6 text-secondary text-uppercase letter-spacing mb-3">Tecnologías</h3>
+        <h3 className="lead fw-semibold text-secondary text-uppercase mb-3">Tecnologías</h3>
         <div className="d-flex flex-wrap justify-content-center gap-2">
           {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3'].map(
             (tech) => (

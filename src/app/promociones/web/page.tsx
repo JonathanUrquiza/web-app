@@ -72,7 +72,7 @@ export default function Web() {
       {/* Hero */}
       <section className="text-center mb-5">
         <span className="badge bg-success mb-3">Web Completa — Fullstack</span>
-        <h1 className="display-5 fw-bold text-white mb-3">
+        <h1 className="display-4 fw-bold text-white mb-3">
           Soluciones <span className="text-success">fullstack</span>{' '}
           <span className="text-warning">end-to-end</span>
         </h1>
@@ -96,7 +96,7 @@ export default function Web() {
                 <span className={`badge ${plan.badgeClass} mb-3 align-self-start`}>
                   {plan.badge}
                 </span>
-                <h2 className="card-title h5 fw-bold text-success mb-1">{plan.name}</h2>
+                <h2 className="card-title display-6 fw-bold text-success mb-1">{plan.name}</h2>
                 <p className="fw-bold text-white mb-3" style={{ fontSize: '1.1rem' }}>
                   {plan.priceRange}
                 </p>
@@ -112,7 +112,7 @@ export default function Web() {
                   href={`${WA_LINK}?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(plan.name)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-success fw-bold mt-4 w-100"
+                  className="btn btn-info text-dark fw-bold mt-4 w-100"
                 >
                   Consultar por WhatsApp
                 </a>
@@ -124,7 +124,7 @@ export default function Web() {
 
       {/* Process section */}
       <section className="mb-5">
-        <h3 className="text-center text-white h5 mb-4">Proceso de trabajo</h3>
+        <h3 className="lead fw-semibold text-center text-white mb-4">Proceso de trabajo</h3>
         <div className="row g-3 justify-content-center">
           {[
             { step: '01', label: 'Reunión inicial', desc: 'Relevamos tus necesidades y objetivos.' },
@@ -145,7 +145,7 @@ export default function Web() {
 
       {/* Tech stack */}
       <section className="text-center mb-5">
-        <h3 className="h6 text-secondary text-uppercase mb-3">Tecnologías</h3>
+        <h3 className="lead fw-semibold text-secondary text-uppercase mb-3">Tecnologías</h3>
         <div className="d-flex flex-wrap justify-content-center gap-2">
           {[
             'Next.js', 'React', 'TypeScript', 'Node.js', 'Express',

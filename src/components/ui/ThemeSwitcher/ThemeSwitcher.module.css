@@ -1,0 +1,114 @@
+.wrapper {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.trigger {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--duw-border, #2d2d2d);
+  background: var(--duw-surface, #1a1a1a);
+  color: var(--duw-text, #f8f9fa);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.trigger:hover {
+  transform: scale(1.1);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--duw-accent, #0dcaf0);
+  outline-offset: 3px;
+}
+
+.panel {
+  background: var(--duw-surface, #1a1a1a);
+  border: 1px solid var(--duw-border, #2d2d2d);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 140px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--duw-text, #f8f9fa);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--duw-accent, #0dcaf0);
+  outline-offset: 2px;
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+}
+
+.optionIcon {
+  font-size: 1rem;
+}
+
+.optionLabel {
+  flex: 1;
+}
+
+.check {
+  margin-left: auto;
+  color: var(--duw-accent, #0dcaf0);
+}
+
+/* Hide on print */
+@media print {
+  .wrapper {
+    display: none;
+  }
+}

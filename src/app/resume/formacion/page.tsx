@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 
 export default function FromationContainer() {
   return (
-    <div>FromationContainer</div>
+    <div>
+      <h1 className="visually-hidden">Formación Académica — Jonathan Javier Urquiza</h1>
+      FromationContainer
+    </div>
   )
 }

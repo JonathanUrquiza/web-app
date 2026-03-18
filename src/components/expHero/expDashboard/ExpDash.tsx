@@ -107,7 +107,7 @@ export default function ExpDash() {
         <>
             <section className='row p-4'>
                 <div className="flex items-center space-x-2">
-                    <h3 className="text-tremor-default font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
+                    <h3 className="lead fw-semibold text-light">
                         Experciencia Laboral
                     </h3>
                     <span className="inline-flex size-6 items-center justify-center rounded-tremor-full bg-tremor-background-subtle text-tremor-label font-medium text-tremor-content-strong dark:bg-dark-tremor-background-subtle dark:text-dark-tremor-content-strong">
