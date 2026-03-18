@@ -29,39 +29,27 @@ export default function NavbarContainer() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
-                <Nav.Link><Link className=' text-decoration-none text-light' href="https://www.linkedin.com/in/jonathan-urquiza-179a70119/">LinkedIn</Link></Nav.Link>
-                <Nav.Link><Link className=' text-decoration-none text-light' href="https://github.com/JonathanUrquiza/JonathanUrquiza">Github</Link></Nav.Link>
+                <Nav.Link as={Link} className='text-decoration-none text-light' href="https://www.linkedin.com/in/jonathan-urquiza-179a70119/">LinkedIn</Nav.Link>
+                <Nav.Link as={Link} className='text-decoration-none text-light' href="https://github.com/JonathanUrquiza/JonathanUrquiza">Github</Nav.Link>
                 <NavDropdown title="Ejemplos" id="basic-nav-dropdown">
-                  <NavDropdown.Item>
-                    <Link className='text-decoration-none text-black' href="/devweb">
-                      Desarrollo Web
-                    </Link>
+                  <NavDropdown.Item as={Link} className='nav-dropdown-link' href="/devweb">
+                    Desarrollo Web
                   </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link className='text-decoration-none text-black' href="/frontend">
-                      Frontend
-                    </Link>
+                  <NavDropdown.Item as={Link} className='nav-dropdown-link' href="/frontend">
+                    Frontend
                   </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link className='text-decoration-none text-black' href="/backend">
-                      Backend
-                    </Link>
+                  <NavDropdown.Item as={Link} className='nav-dropdown-link' href="/backend">
+                    Backend
                   </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link className='text-decoration-none text-black' href="/programacion">
-                      Programación
-                    </Link>
+                  <NavDropdown.Item as={Link} className='nav-dropdown-link' href="/programacion">
+                    Programación
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link>
-                  <Link className=' text-decoration-none text-light' href="/promociones">
-                    Promociones
-                  </Link>
+                <Nav.Link as={Link} className='text-decoration-none text-light' href="/promociones">
+                  Promociones
                 </Nav.Link>
-                <Nav.Link>
-                  <Link className=' text-decoration-none text-light' href="/resume">
-                    Resume
-                  </Link>
+                <Nav.Link as={Link} className='text-decoration-none text-light' href="/resume">
+                  Resume
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>

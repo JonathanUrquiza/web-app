@@ -10,20 +10,14 @@ export default function PromoNav() {
                 <Navbar.Toggle aria-controls="promo-navbar-nav" />
                 <Navbar.Collapse id="promo-navbar-nav" className="justify-content-center">
                     <Nav>
-                        <Nav.Link>
-                            <Link className='text-decoration-none text-light promo-nav-link' href='/promociones/web'>
-                                Desarrollo web
-                            </Link>
+                        <Nav.Link as={Link} className='text-decoration-none text-light promo-nav-link' href='/promociones/web'>
+                            Desarrollo web
                         </Nav.Link>
-                        <Nav.Link>
-                            <Link className='text-decoration-none text-light promo-nav-link' href='/promociones/front'>
-                                Frontend Development
-                            </Link>
+                        <Nav.Link as={Link} className='text-decoration-none text-light promo-nav-link' href='/promociones/front'>
+                            Frontend Development
                         </Nav.Link>
-                        <Nav.Link>
-                            <Link className='text-decoration-none text-light promo-nav-link' href='/promociones/back'>
-                                Backend Development
-                            </Link>
+                        <Nav.Link as={Link} className='text-decoration-none text-light promo-nav-link' href='/promociones/back'>
+                            Backend Development
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

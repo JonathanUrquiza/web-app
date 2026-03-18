@@ -257,6 +257,50 @@
   text-shadow: var(--duw-glow-pink);
 }
 
+/* ── Navbar dropdown per-theme ───────────────────────────────── */
+
+/* Dark */
+:root .dropdown-menu,
+[data-theme="dark"] .dropdown-menu {
+  background-color: #1a1a1a;
+  border-color: #2d2d2d;
+}
+:root .nav-dropdown-link,
+[data-theme="dark"] .nav-dropdown-link {
+  color: #f8f9fa !important;
+}
+:root .nav-dropdown-link:hover,
+[data-theme="dark"] .nav-dropdown-link:hover {
+  color: #0dcaf0 !important;
+}
+
+/* Light */
+[data-theme="light"] .dropdown-menu {
+  background-color: #ffffff;
+  border-color: #dee2e6;
+}
+[data-theme="light"] .nav-dropdown-link {
+  color: #212529 !important;
+}
+[data-theme="light"] .nav-dropdown-link:hover {
+  color: #0891b2 !important;
+}
+
+/* Synthwave */
+[data-theme="synthwave"] .dropdown-menu {
+  background-color: #1a0533;
+  border-color: rgba(131, 56, 236, 0.5);
+  box-shadow: 0 0 16px rgba(131, 56, 236, 0.3);
+}
+[data-theme="synthwave"] .nav-dropdown-link {
+  color: #f0e6ff !important;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+[data-theme="synthwave"] .nav-dropdown-link:hover {
+  color: #00f5ff !important;
+  text-shadow: 0 0 8px #00f5ff, 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
 /* Synthwave — PromoNavbar neon links */
 [data-theme="synthwave"] .promo-nav-link {
   color: #f0e6ff !important;
